@@ -1,6 +1,7 @@
 # JavaScript Array Reference Sheet
 
 In this blog, I would like to discuss the different methods that JavaScript offers for arrays. This could work as a refresher or a concise guide if you are learning the language.
+$$ $$
 
 ## Array Methods
 
