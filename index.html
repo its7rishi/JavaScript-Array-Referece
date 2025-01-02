@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Array Reference Sheet</title>
+    <style>
+      /* From extension vscode.github */
+      /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+      .vscode-dark img[src$="\#gh-light-mode-only"],
+      .vscode-light img[src$="\#gh-dark-mode-only"],
+      .vscode-high-contrast:not(.vscode-high-contrast-light)
+        img[src$="\#gh-light-mode-only"],
+      .vscode-high-contrast-light img[src$="\#gh-dark-mode-only"] {
+        display: none;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Montserrat", serif;
+        font-size: 20px;
+        line-height: 1.6;
+      }
+    </style>
+    <style>
+      .task-list-item {
+        list-style-type: none;
+      }
+
+      .task-list-item-checkbox {
+        margin-left: -20px;
+        vertical-align: middle;
+        pointer-events: none;
+      }
+    </style>
+    <style>
+      :root {
+        --color-note: #0969da;
+        --color-tip: #1a7f37;
+        --color-warning: #9a6700;
+        --color-severe: #bc4c00;
+        --color-caution: #d1242f;
+        --color-important: #8250df;
+      }
+    </style>
+    <style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-note: #2f81f7;
+          --color-tip: #3fb950;
+          --color-warning: #d29922;
+          --color-severe: #db6d28;
+          --color-caution: #f85149;
+          --color-important: #a371f7;
+        }
+      }
+    </style>
+    <style>
+      .markdown-alert {
+        padding: 0.5rem 1rem;
+        margin-bottom: 16px;
+        color: inherit;
+        border-left: 0.25em solid #888;
+      }
+
+      .markdown-alert > :first-child {
+        margin-top: 0;
+      }
+
+      .markdown-alert > :last-child {
+        margin-bottom: 0;
+      }
+
+      .markdown-alert .markdown-alert-title {
+        display: flex;
+        font-weight: 500;
+        align-items: center;
+        line-height: 1;
+      }
+
+      .markdown-alert .markdown-alert-title .octicon {
+        margin-right: 0.5rem;
+        display: inline-block;
+        overflow: visible !important;
+        vertical-align: text-bottom;
+        fill: currentColor;
+      }
+
+      .markdown-alert.markdown-alert-note {
+        border-left-color: var(--color-note);
+      }
+
+      .markdown-alert.markdown-alert-note .markdown-alert-title {
+        color: var(--color-note);
+      }
+
+      .markdown-alert.markdown-alert-important {
+        border-left-color: var(--color-important);
+      }
+
+      .markdown-alert.markdown-alert-important .markdown-alert-title {
+        color: var(--color-important);
+      }
+
+      .markdown-alert.markdown-alert-warning {
+        border-left-color: var(--color-warning);
+      }
+
+      .markdown-alert.markdown-alert-warning .markdown-alert-title {
+        color: var(--color-warning);
+      }
+
+      .markdown-alert.markdown-alert-tip {
+        border-left-color: var(--color-tip);
+      }
+
+      .markdown-alert.markdown-alert-tip .markdown-alert-title {
+        color: var(--color-tip);
+      }
+
+      .markdown-alert.markdown-alert-caution {
+        border-left-color: var(--color-caution);
+      }
+
+      .markdown-alert.markdown-alert-caution .markdown-alert-title {
+        color: var(--color-caution);
+      }
+    </style>
+  </head>
+  <body class="vscode-body vscode-light">
+    <h1 id="javascript-array-reference-sheet">
+      JavaScript Array Reference Sheet
+    </h1>
+    <p>
+      In this blog, I would like to discuss the different methods that
+      JavaScript offers for arrays. This could work as a refresher or a concise
+      guide if you are learning the language
+    </p>
+    <h2 id="array-methods">Array Methods</h2>
+    <p>** Table of Contents **</p>
+    <ul>
+      <li>
+        <p><a href="#section-1">Basic Array Methods</a></p>
+      </li>
+      <li>
+        <p><a href="#section-2">Array Search Methods</a></p>
+      </li>
+      <li>
+        <p><a href="#section-3">Array Sort Methods</a></p>
+      </li>
+      <li>
+        <p><a href="#section-4">Array Iteration Methods</a></p>
+      </li>
+      <li>
+        <p><a href="#conclusion">Conclusion</a></p>
+        <p><a id="section-1"></a></p>
+      </li>
+    </ul>
+    <h3 id="section-1-basic-array-methods">Section 1: Basic Array Methods</h3>
+    <h4 id="1-array-length">1. Array .length</h4>
+    <p>returns length of the array</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">let</span> nums = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-title function_">print</span>(nums.<span class="hljs-property">length</span>);
+
+<span class="hljs-comment">// Output: 4</span>
+</code></pre>
+    <h4 id="2-array-tostring">2. Array .toString()</h4>
+    <p>Converts array to comma separated string</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">let</span> cities = [<span class="hljs-string">&quot;Mumbai&quot;</span>, <span class="hljs-string">&quot;Paris&quot;</span>, <span class="hljs-string">&quot;London&quot;</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(cities.<span class="hljs-title function_">toString</span>());
+
+<span class="hljs-comment">// Output: Mumbai, Paris, London</span>
+</code></pre>
+    <h4 id="3-array-at">3. Array .at()</h4>
+    <p>Returns the value of the element of the given index</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">let</span> languages = [<span class="hljs-string">&quot;English&quot;</span>, <span class="hljs-string">&quot;French&quot;</span>, <span class="hljs-string">&quot;Hindi&quot;</span>];
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(languages.<span class="hljs-title function_">at</span>(<span class="hljs-number">2</span>));
+
+<span class="hljs-comment">// Output Hindi</span>
+</code></pre>
+    <h4 id="4-arrayjoin">4. Array.join()</h4>
+    <p>Joins the array elements into a string</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">let</span> heroes = [<span class="hljs-string">&quot;Batman&quot;</span>, <span class="hljs-string">&quot;Superman&quot;</span>, <span class="hljs-string">&quot;Spiderman&quot;</span>];
+
+hero_text = heroes.<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;,&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(hero_text);
+
+<span class="hljs-comment">// Output &#x27;Batman, Superman, Spiderman&#x27;</span>
+</code></pre>
+    <h4 id="5-array-pop">5. Array .pop()</h4>
+    <p>Removes the last element from the array.</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-keyword">let</span> arr2 = arr.<span class="hljs-title function_">pop</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr2);
+
+<span class="hljs-comment">// output [1, 2, 3]</span>
+</code></pre>
+    <h4 id="6-array-push">6. Array .push()</h4>
+    <p>Adds an element at the end of the array.</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">let</span> fruits = [<span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;fig&quot;</span>, <span class="hljs-string">&quot;guava&quot;</span>];
+fruits.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;mango&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fruits);
+
+<span class="hljs-comment">// Output [&#x27;apple&#x27;, &#x27;fig&#x27;, &#x27;guava&#x27;, &#x27;mango&#x27;]</span>
+</code></pre>
+    <h4 id="7-array-shift">7. Array .shift()</h4>
+    <p>Removes the first element of the array.</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>, <span class="hljs-string">&quot;e&quot;</span>];
+<span class="hljs-keyword">let</span> arr2 = arr.<span class="hljs-title function_">shift</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr2);
+
+<span class="hljs-comment">// Output [&#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27;]</span>
+</code></pre>
+    <h4 id="8-array-unshift">8. Array .unshift()</h4>
+    <p>Adds a new element at the start of the array.</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">let</span> people = [<span class="hljs-string">&quot;Jack&quot;</span>, <span class="hljs-string">&quot;Mary&quot;</span>, <span class="hljs-string">&quot;Bob&quot;</span>];
+people.<span class="hljs-title function_">unshift</span>(<span class="hljs-string">&quot;Tom&quot;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(people);
+
+<span class="hljs-comment">// Output [&#x27;Tom&#x27;, &#x27;Jack&#x27;, &#x27;Mary&#x27;, &#x27;bob&#x27;]</span>
+</code></pre>
+    <h4 id="9-array-delete">9. Array delete()</h4>
+    <p>Used to remove an element from the array.</p>
+    <p>
+      WARNING!!! - should be avoided as it leaves a hole in the array. Alternate
+      methods should be used such as pop(), shift(), etc...
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-keyword">delete</span> arr[<span class="hljs-number">0</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr);
+
+<span class="hljs-comment">// Output [2, 3, 4]</span>
+</code></pre>
+    <h4 id="10-array-concat">10. Array concat()</h4>
+    <p>Creates a new array by merging arrays.</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> arr1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-keyword">const</span> arr2 = [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>];
+
+<span class="hljs-keyword">const</span> numbers = arr1.<span class="hljs-title function_">concat</span>(arr2);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(numbers);
+
+<span class="hljs-comment">// Output [1, 2, 3, 4, 5, 6, 7, 8]</span>
+
+<span class="hljs-keyword">const</span> cart1 = [<span class="hljs-string">&#x27;eggs&#x27;</span>, <span class="hljs-string">&#x27;bread&#x27;</span>, <span class="hljs-string">&#x27;jam&#x27;</span>];
+<span class="hljs-keyword">const</span> cart2 = [<span class="hljs-string">&#x27;cereals&#x27;</span>, <span class="hljs-string">&#x27;cookies&#x27;</span>, <span class="hljs-string">&#x27;cake&#x27;</span>];
+<span class="hljs-keyword">const</span> cart3 = [<span class="hljs-string">&#x27;milk&#x27;</span>, <span class="hljs-string">&#x27;honey&#x27;</span>, <span class="hljs-string">&#x27;cheese&#x27;</span>]
+
+<span class="hljs-keyword">const</span> shoppingBag = car1.<span class="hljs-title function_">concat</span>(cart2, card3);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(shoppingBag):
+
+<span class="hljs-comment">// Output: [&#x27;eggs&#x27;, &#x27;bread&#x27;, &#x27;jam&#x27;, &#x27;cereals&#x27;, &#x27;cookies&#x27;, &#x27;cake&#x27;, &#x27;milk&#x27;, &#x27;honey&#x27;, &#x27;cheese&#x27;]</span>
+</code></pre>
+    <h4 id="11-array-copywithin">11. Array copyWithin()</h4>
+    <p>
+      To copy array element/s from one position to another within the same
+      array.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-comment">/*
+Syntax:
+&lt;array&gt;.copyWithin(location, &lt;index-from&gt;, &lt;index-upto&gt;)
+*/</span>
+
+<span class="hljs-comment">// ** Copy all elements to index 2 **</span>
+<span class="hljs-keyword">const</span> letters = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>, <span class="hljs-string">&quot;e&quot;</span>];
+letters.<span class="hljs-title function_">copyWithin</span>(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(letters);
+
+<span class="hljs-comment">// Output [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;]</span>
+
+<span class="hljs-comment">// ** Copy elements from index 0 to index 2, to(index position) 2</span>
+
+<span class="hljs-keyword">const</span> arr = [<span class="hljs-string">&quot;hi&quot;</span>, <span class="hljs-string">&quot;oh&quot;</span>, <span class="hljs-string">&quot;ah&quot;</span>, <span class="hljs-string">&quot;no&quot;</span>, <span class="hljs-string">&quot;ya&quot;</span>];
+arr.<span class="hljs-title function_">copyWithin</span>(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr);
+
+<span class="hljs-comment">// Output [ &#x27;hi&#x27;, &#x27;oh&#x27;, &#x27;hi&#x27;, &#x27;oh&#x27;, &#x27;ya&#x27; ]</span>
+</code></pre>
+    <p>Note:</p>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <ul>
+            <li>copyWithin() overwrites existing value.</li>
+            <li>copyWithin() does'nt add elements to an array.</li>
+            <li>copyWithin() doe not change change the length of the array.</li>
+          </ul>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+    <h4 id="12-array-flat">12. Array .flat()</h4>
+    <p>Used to flatten a multi-dimensional array.</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> arr = [
+  [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>],
+  [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>],
+  [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>],
+];
+<span class="hljs-keyword">const</span> result = arr.<span class="hljs-title function_">flat</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result);
+
+<span class="hljs-comment">// Output [1, 2, 3, 4, 5, 6]</span>
+</code></pre>
+    <h4 id="13-array-flatmap">13. Array flatMap()</h4>
+    <p>Maps all elements in the array and then flattens the array.</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">const</span> numsMapped = nums.<span class="hljs-title function_">flatMap</span>(<span class="hljs-function">(<span class="hljs-params">x</span>) =&gt;</span> [x, x * <span class="hljs-number">10</span>]);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(numsMapped);
+
+<span class="hljs-comment">// Output [1, 10, 2, 20, 3, 30, 4, 40, 5, 50]</span>
+</code></pre>
+    <h4 id="14-arraysplice">14. Array.splice()</h4>
+    <p>Used to add new items to an array.</p>
+    <pre><code class="language-javascript"><span class="hljs-comment">// Syntax:</span>
+&lt;array&gt;.<span class="hljs-title function_">splice</span>(&lt;index&gt;,&lt;no_of_items_to_remove&gt;, &lt;item_to_add&gt;, &lt;item_to_add2&gt;)
+
+<span class="hljs-keyword">const</span> boys = [<span class="hljs-string">&#x27;Tom&#x27;</span>, <span class="hljs-string">&#x27;Derek&#x27;</span>, <span class="hljs-string">&#x27;Harry&#x27;</span>, <span class="hljs-string">&#x27;Eric&#x27;</span>, <span class="hljs-string">&#x27;Dennis&#x27;</span>];
+
+boys.<span class="hljs-title function_">splice</span>(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;Mohan&#x27;</span>, <span class="hljs-string">&#x27;Paresh&#x27;</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(boys)
+
+<span class="hljs-comment">// 1. first parameter (2) is the index where the new item/s will be inserted.</span>
+<span class="hljs-comment">// 2. second parameter (2) is the number of items to be removed.</span>
+<span class="hljs-comment">// 3. next are the items to be inserted</span>
+
+
+<span class="hljs-comment">/*
+Output:
+[&#x27;Tom&#x27;, &#x27;Derek&#x27;, &#x27;Mohan&#x27;, &#x27;Paresh&#x27;, &#x27;Dennis&#x27;];
+*/</span>
+</code></pre>
+    <p>
+      The splice method can also be used to return the items removed or to
+      simply remove the items
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> fruits = [<span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Cherry&quot;</span>, <span class="hljs-string">&quot;Guava&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>, <span class="hljs-string">&quot;Plum&quot;</span>];
+<span class="hljs-keyword">const</span> deleted_fruits = fruits.<span class="hljs-title function_">splice</span>(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(deleted_fruits);
+
+<span class="hljs-comment">// Output [&#x27;Guava&#x27;, &#x27;Mango&#x27;]</span>
+</code></pre>
+    <h4 id="15-arraytospliced-">15. Array.toSpliced( )</h4>
+    <p>
+      This method was introduced in ES2023. This method returns a new spliced
+      array instead of altering the original array.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> pets = [<span class="hljs-string">&quot;Dog&quot;</span>, <span class="hljs-string">&quot;Cat&quot;</span>, <span class="hljs-string">&quot;Parrot&quot;</span>, <span class="hljs-string">&quot;Hamster&quot;</span>, <span class="hljs-string">&quot;Rabbit&quot;</span>];
+<span class="hljs-comment">// Removes 1 element from index 0</span>
+<span class="hljs-keyword">const</span> new_pets = pets.<span class="hljs-title function_">toSpliced</span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(new_pets)[
+  <span class="hljs-comment">// Output</span>
+  <span class="hljs-comment">// &#x27;Dog has been removed&#x27;</span>
+  (<span class="hljs-string">&quot;Cat&quot;</span>, <span class="hljs-string">&quot;Parrot&quot;</span>, <span class="hljs-string">&quot;Hamster&quot;</span>, <span class="hljs-string">&quot;Rabbit&quot;</span>)
+];
+</code></pre>
+    <h4 id="16-arrayslice">16. Array.slice()</h4>
+    <p>
+      Used to slice a piece of the array. This method returns a new array and
+      does not alter the original array.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> cars = [<span class="hljs-string">&quot;Bugatti&quot;</span>, <span class="hljs-string">&quot;Lamborghini&quot;</span>, <span class="hljs-string">&quot;Ferrari&quot;</span>, <span class="hljs-string">&quot;Lotus&quot;</span>];
+<span class="hljs-comment">// Returns a new array starting form the element at index 1</span>
+<span class="hljs-keyword">const</span> sliced_cars = cars.<span class="hljs-title function_">slice</span>(<span class="hljs-number">1</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sliced_cars);
+
+<span class="hljs-comment">// Output</span>
+[<span class="hljs-string">&quot;Lamborghini&quot;</span>, <span class="hljs-string">&quot;Ferrari&quot;</span>, <span class="hljs-string">&quot;Lotus&quot;</span>]<span class="hljs-string">``</span>;
+</code></pre>
+    <p>
+      You can also set a range of items to be sliced by entering a second
+      parameter.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> cars = [<span class="hljs-string">&quot;Bugatti&quot;</span>, <span class="hljs-string">&quot;Lamborghini&quot;</span>, <span class="hljs-string">&quot;Ferrari&quot;</span>, <span class="hljs-string">&quot;Lotus&quot;</span>];
+<span class="hljs-comment">// Returns a slice array from index 1 upto index 3</span>
+<span class="hljs-keyword">const</span> sliced_cars = cars.<span class="hljs-title function_">slice</span>(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sliced_cars);
+
+<span class="hljs-comment">// Output [&#x27;Lamborghini&#x27;, &#x27;Ferrari&#x27;]</span>
+</code></pre>
+    <p><a id="section-2"></a></p>
+    <h3 id="section-2-array-search-methods">Section 2: Array Search Methods</h3>
+    <h4 id="1-array-indexof">1. Array indexOf()</h4>
+    <p>This method return the index of the searched value in an array.</p>
+    <pre><code class="language-javascript"><span class="hljs-title class_">Syntax</span>:
+array.<span class="hljs-title function_">indexof</span>(&lt;item_to_be_searched&gt;,&lt;from_position&gt;)
+
+- first parameter is the value you are searching <span class="hljs-keyword">for</span> <span class="hljs-keyword">in</span> the array.
+
+- <span class="hljs-title class_">The</span> second parameter is optional. <span class="hljs-title class_">It</span> is used to specify the starting position <span class="hljs-keyword">of</span> the search
+</code></pre>
+    <p>If the searched value is not present the method return ' -1 '.</p>
+    <p>
+      If the item occurs more than once in the array, then the index of the
+      first occurrence will be returned.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> arr = [<span class="hljs-string">&quot;Japan&quot;</span>, <span class="hljs-string">&quot;China&quot;</span>, <span class="hljs-string">&quot;Russia&quot;</span>, <span class="hljs-string">&quot;Ghana&quot;</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr.<span class="hljs-title function_">indexOf</span>(<span class="hljs-string">&quot;China&quot;</span>));
+
+<span class="hljs-comment">// Output 1</span>
+</code></pre>
+    <h4 id="2-array-lastindexof">2. Array lastIndexOf()</h4>
+    <p>
+      This method returns the index of the last occurrence of the specified
+      search item.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> flowers = [<span class="hljs-string">&quot;Rose&quot;</span>, <span class="hljs-string">&quot;Daisy&quot;</span>, <span class="hljs-string">&quot;Lilly&quot;</span>, <span class="hljs-string">&quot;Tulip&quot;</span>, <span class="hljs-string">&quot;Daisy&quot;</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">lastIndexOf</span>(<span class="hljs-string">&quot;Daisy&quot;</span>));
+
+<span class="hljs-comment">// Output 4</span>
+</code></pre>
+    <h4 id="3-array-includes">3. Array includes()</h4>
+    <p>
+      This method searches for an element in an array and returns 'true' if it
+      is present or 'false' if otherwise.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> arr = [<span class="hljs-string">&quot;bread&quot;</span>, <span class="hljs-string">&quot;jam&quot;</span>, <span class="hljs-string">&quot;butter&quot;</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&quot;jam&quot;</span>));
+
+<span class="hljs-comment">// Output true</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&quot;cheese&quot;</span>));
+
+<span class="hljs-comment">// Output false</span>
+</code></pre>
+    <h4 id="4-array-find">4. Array find()</h4>
+    <p>
+      This method returns the first array element that meets the test criteria.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(nums.<span class="hljs-title function_">find</span>(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> item % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>));
+
+<span class="hljs-comment">// Output 2</span>
+</code></pre>
+    <h4 id="5-array-findindex">5. Array findIndex()</h4>
+    <p>
+      This method iterates through each element of the array and returns the
+      index of the element that passes the test function.
+    </p>
+    <p>The function takes 3 parameters:</p>
+    <ul>
+      <li>value : The value of the element</li>
+      <li>index : The index of the element</li>
+      <li>
+        array : The array itself (useful when you want to access the other
+        elements of the array)
+      </li>
+    </ul>
+    <p>
+      If none of the array elements pass the test function, it returns '-1'.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>];
+
+<span class="hljs-keyword">const</span> first_odd_num = arr.<span class="hljs-title function_">findIndex</span>(testFunction);
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">testFunction</span>(<span class="hljs-params">value, index, array</span>) {
+  <span class="hljs-keyword">return</span> value % <span class="hljs-number">2</span> !== <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(first_odd_num);
+
+<span class="hljs-comment">// Output 3</span>
+</code></pre>
+    <h4 id="6-array-findlast">6. Array findLast()</h4>
+    <p>
+      This method iterates through each element of the array from the end and
+      returns the value of the first element that passes the test function.
+    </p>
+    <p>
+      If none of the elements pass the test then this method returns
+      'undefined'.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">10</span>, <span class="hljs-number">59</span>, <span class="hljs-number">35</span>, <span class="hljs-number">65</span>, <span class="hljs-number">22</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(numbers.<span class="hljs-title function_">findLast</span>(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> value &gt; <span class="hljs-number">50</span>));
+
+<span class="hljs-comment">// Output 65</span>
+</code></pre>
+    <h4 id="7-array-findlastindex">7. Array findLastIndex()</h4>
+    <p>
+      This method iterates through each element of the array from the end and
+      returns the index of the first element that matches the test function.
+    </p>
+    <p>If none of the elements pass the test, then it returns '-1'</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">11</span>, <span class="hljs-number">2</span>, <span class="hljs-number">22</span>, <span class="hljs-number">3</span>, <span class="hljs-number">33</span>];
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(numbers.<span class="hljs-title function_">findLastIndex</span>(<span class="hljs-function">(<span class="hljs-params">x</span>) =&gt;</span> x &lt; <span class="hljs-number">20</span>));
+
+<span class="hljs-comment">// Output 4</span>
+</code></pre>
+    <p><a id="section-3"></a></p>
+    <h3 id="section-3-array-sort-methods">Section 3: Array Sort Methods</h3>
+    <h5 id="1-array-sort">1. Array sort()</h5>
+    <p>This method sorts and array alphabetically.</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> arr = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;e&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>];
+arr.<span class="hljs-title function_">sort</span>();
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr);
+
+<span class="hljs-comment">// Output [ &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27; ]</span>
+</code></pre>
+    <h5 id="2-array-reverse">2. Array reverse()</h5>
+    <p>This method reverses the elements in an array.</p>
+    <p><mark>Note:</mark> This method alters the original array.</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> arr = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>, <span class="hljs-string">&quot;e&quot;</span>];
+arr.<span class="hljs-title function_">reverse</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr);
+
+<span class="hljs-comment">// Output [ &#x27;e&#x27;, &#x27;d&#x27;, &#x27;c&#x27;, &#x27;b&#x27;, &#x27;a&#x27; ]</span>
+</code></pre>
+    <h5 id="3-array-reverse-sort">3. Array reverse sort</h5>
+    <p>
+      To reverse sort an array you can use both sort() and reverse() methods.
+    </p>
+    <p><mark>Note:</mark> This method alters the original array.</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>, <span class="hljs-string">&quot;e&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>];
+arr.<span class="hljs-title function_">sort</span>();
+arr.<span class="hljs-title function_">reverse</span>();
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr);
+
+<span class="hljs-comment">// Output [ &#x27;e&#x27;, &#x27;d&#x27;, &#x27;c&#x27;, &#x27;b&#x27;, &#x27;a&#x27; ]</span>
+</code></pre>
+    <h5 id="4-array-tosorted">4. Array toSorted()</h5>
+    <p>
+      This method returns a new sorted array. It does not alter the original
+      array.
+    </p>
+    <pre><code class="language-javascript">arr = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-string">&quot;e&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>];
+sorted_arr = <span class="hljs-title function_">toSorted</span>(arr);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sorted_arr);
+
+<span class="hljs-comment">// Output [ &#x27;a&#x27;, &#x27;b&#x27;,&#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27; ]</span>
+</code></pre>
+    <h5 id="5-array-toreversed">5. Array toReversed()</h5>
+    <p>
+      This method returns a new reversed array. It does not alter the original
+      array.
+    </p>
+    <pre><code class="language-javascript">arr = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>, <span class="hljs-string">&quot;e&quot;</span>];
+reversed_arr = <span class="hljs-title function_">toReversed</span>(arr);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(reversed_arr);
+
+<span class="hljs-comment">// Output [&#x27;e&#x27;, &#x27;d&#x27;, &#x27;c&#x27;, &#x27;b&#x27;, &#x27;a&#x27; ]</span>
+</code></pre>
+    <h5 id="6-numeric-sort">6. Numeric Sort</h5>
+    <p>
+      The sort() method above cannot be used for sorting numbers. This is
+      because the sort() method by default sorts values as strings. So, if we
+      sort numbers as string then we will get wrong outputs.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">1</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>, <span class="hljs-number">3</span>, <span class="hljs-number">8</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">100</span>];
+nums.<span class="hljs-title function_">sort</span>();
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(nums);
+
+<span class="hljs-comment">/*** Gives Incorrect results ***/</span>
+
+<span class="hljs-comment">// Output [ 1, 100, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</code></pre>
+    <p>To overcome this problem, we need to use a comparison function.</p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">1</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>, <span class="hljs-number">3</span>, <span class="hljs-number">8</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">100</span>];
+nums.<span class="hljs-title function_">sort</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) {
+  <span class="hljs-keyword">return</span> a - b;
+});
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(nums);
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-comment">// [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 100 ]</span>
+</code></pre>
+    <p>
+      The compare function can also be used to sort the numbers in descending
+      order.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">1</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>, <span class="hljs-number">3</span>, <span class="hljs-number">8</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">100</span>];
+nums.<span class="hljs-title function_">sort</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) {
+  <span class="hljs-keyword">return</span> b - a;
+});
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(nums);
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-comment">// [ 100, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]</span>
+</code></pre>
+    <p>
+      How does the compare function work? The compare function iterates through
+      the array elements and compares then 2 at a time <mark> (a, b)</mark>
+    </p>
+    <ul>
+      <li>
+        if the result is negative, the function will sort 'a' as a lower value
+        than 'b'.
+      </li>
+      <li>
+        if the result is positive, the function will sort 'a' as a higher value
+        than 'b'.
+      </li>
+      <li>if the result is zero, then there is no change to the sort order.</li>
+    </ul>
+    <h5 id="7-array-random-sort">7. Array Random Sort</h5>
+    <p>
+      One of the popular methods to sort an array is the Fisher Yates method.
+    </p>
+    <p>
+      <code>Note: The array will shuffle each time you run the below code</code>
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = nums.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>; i &gt; <span class="hljs-number">0</span>; i--) {
+  <span class="hljs-keyword">let</span> j = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * i + <span class="hljs-number">1</span>);
+  <span class="hljs-keyword">let</span> k = nums[i];
+  nums[i] = nums[j];
+  nums[j] = k;
+}
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(nums);
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-comment">// [ 1, 2, 3, 10, 6, 7, 5, 9,  8, 4 ]</span>
+</code></pre>
+    <h5 id="8-array-minimum-and-maximum-values">
+      8. Array Minimum and Maximum values
+    </h5>
+    <p>
+      The sort method can be used to find the minimum and maximum values in an
+      array.
+    </p>
+    <ul>
+      <li>
+        <p>
+          the first element will be the minimum value for an array sorted in
+          ascending order.
+        </p>
+      </li>
+      <li>
+        <p>
+          the last element will be the maximum value for an array sorted in
+          descending order.
+        </p>
+      </li>
+    </ul>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">111</span>, <span class="hljs-number">12</span>, <span class="hljs-number">63</span>, <span class="hljs-number">34</span>, <span class="hljs-number">15</span>, <span class="hljs-number">96</span>, <span class="hljs-number">27</span>, <span class="hljs-number">80</span>, <span class="hljs-number">19</span>, <span class="hljs-number">10</span>];
+nums.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a - b);
+<span class="hljs-keyword">const</span> minimum = nums[<span class="hljs-number">0</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Minimum: &quot;</span>, minimum);
+<span class="hljs-keyword">const</span> maximum = nums[nums.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Maximum: &quot;</span>, maximum);
+
+<span class="hljs-comment">// Output</span>
+<span class="hljs-comment">/*
+Minimum: 10
+Maximum: 111
+*/</span>
+</code></pre>
+    <h5 id="9-array-mathmin-and-mathmax">9. Array Math.min() and Math.max()</h5>
+    <p>
+      The method <code>Math.min.apply</code> and <code>Maht.max.apply</code> can
+      be used to get the lowest or highest value from an array instead of
+      sorting the whole array.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">111</span>, <span class="hljs-number">12</span>, <span class="hljs-number">63</span>, <span class="hljs-number">34</span>, <span class="hljs-number">15</span>, <span class="hljs-number">96</span>, <span class="hljs-number">27</span>, <span class="hljs-number">80</span>, <span class="hljs-number">19</span>, <span class="hljs-number">10</span>];
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">myMin</span>(<span class="hljs-params">arr</span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Math</span>.<span class="hljs-property">min</span>.<span class="hljs-title function_">apply</span>(<span class="hljs-literal">null</span>, arr);
+}
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">myMax</span>(<span class="hljs-params">arr</span>) {
+  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Math</span>.<span class="hljs-property">max</span>.<span class="hljs-title function_">apply</span>(<span class="hljs-literal">null</span>, arr);
+}
+
+minimum = <span class="hljs-title function_">myMin</span>(nums);
+maximum = <span class="hljs-title function_">myMax</span>(nums);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Minimum: &quot;</span>, minimum);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Maximum: &quot;</span>, maximum);
+
+<span class="hljs-comment">/*
+Output:
+Minimum:  10
+Maximum:  111
+*/</span>
+</code></pre>
+    <h5 id="10-sorting-array-of-objects">10. Sorting Array of Objects</h5>
+    <p>
+      Object array too can be sorted using the <code>Array.sort()</code> method.
+      You will need to use the compare function as well.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> students = [
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;John&quot;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">13</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Max&quot;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">18</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Jane&quot;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">15</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Chris&quot;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">11</span> },
+];
+
+<span class="hljs-comment">// Sort Age in ascending order</span>
+<span class="hljs-keyword">const</span> asc_sorted = students.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a.<span class="hljs-property">age</span> - b.<span class="hljs-property">age</span>);
+
+<span class="hljs-comment">// Sort Age in descending order</span>
+<span class="hljs-keyword">const</span> desc_sorted = students.<span class="hljs-title function_">sort</span>(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> b.<span class="hljs-property">age</span> - a.<span class="hljs-property">age</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Ascending: &quot;</span>, asc_sorted);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Descending: &quot;</span>, desc_sorted);
+
+<span class="hljs-comment">/*
+Output:
+
+Ascending:  [
+{ name: &#x27;Max&#x27;, age: 18 },
+{ name: &#x27;Jane&#x27;, age: 15 },
+{ name: &#x27;John&#x27;, age: 13 },
+{ name: &#x27;Chris&#x27;, age: 11 }
+]
+
+
+Descending:  [
+{ name: &#x27;Max&#x27;, age: 18 },
+{ name: &#x27;Jane&#x27;, age: 15 },
+{ name: &#x27;John&#x27;, age: 13 },
+{ name: &#x27;Chris&#x27;, age: 11 }
+]
+*/</span>
+</code></pre>
+    <p><a id="section-4"></a></p>
+    <h3 id="section-4-array-iteration-methods">
+      Section 4: Array Iteration Methods
+    </h3>
+    <h5 id="1-array-foreach">1. Array forEach()</h5>
+    <p>
+      This method runs a callback function once on each of the array element.
+    </p>
+    <p>The call back function can take three arguments:</p>
+    <ul>
+      <li>value - value of the item on which the function is acting.</li>
+      <li>index - index reference of the array.</li>
+      <li>array - the array itself</li>
+    </ul>
+    <pre><code class="language-JavaScript"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]
+arr.<span class="hljs-title function_">forEach</span>(makeDouble)
+
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">makeDouble</span>(<span class="hljs-params">value, index, array</span>){
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(value * <span class="hljs-number">2</span>);
+}
+<span class="hljs-comment">/*
+Output:
+2
+4
+6
+8
+*/</span>
+</code></pre>
+    <h5 id="2-array-map">2. Array map()</h5>
+    <p>
+      This method creates a new array by running a callback function on each
+      array element. If the array element is empty, then the function will not
+      run on that particular array element. This method does not alter the
+      original array.
+    </p>
+    <p>The callback function takes three arguments:</p>
+    <ul>
+      <li>value - The value of the element.</li>
+      <li>index - The index of the element.</li>
+      <li>array - The array itself.</li>
+    </ul>
+    <p>
+      If the callback function only uses the value argument, then the index and
+      array arguments are omitted.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> nums = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">const</span> thrice_nums = nums.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> value * <span class="hljs-number">3</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(thrice_nums);
+
+<span class="hljs-comment">/*
+Output:
+
+[ 3, 6, 9, 12, 15 ]
+*/</span>
+</code></pre>
+    <h5 id="3-array-flatmap">3. Array flatMap()</h5>
+    <p>
+      This method returns a new array formed by running a call back function on
+      each of the array elements and then flattening the array by one level.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>];
+<span class="hljs-comment">// if element is even return [2, 2]</span>
+<span class="hljs-keyword">const</span> arr2 = arr.<span class="hljs-title function_">flatMap</span>(<span class="hljs-function">(<span class="hljs-params">num</span>) =&gt;</span> (num % <span class="hljs-number">2</span> === <span class="hljs-number">0</span> ? [<span class="hljs-number">2</span>, <span class="hljs-number">2</span>] : num));
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr2);
+
+<span class="hljs-comment">/*
+
+Step 1: Even numbers are replaced with array [2,2]
+
+Step 2: The [2,2] array is flattened and thus &#x27;2,2&#x27; is returned below. 
+
+Output:
+
+[1, 2, 2, 3, 2, 2, 5, 2, 2 ]
+
+*/</span>
+</code></pre>
+    <h5 id="4-array-filter">4. Array filter()</h5>
+    <p>
+      This method returns a new array by running a test on each element of the
+      array provided by a callback function. Only the elements that pass the
+      callback function test are returned.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-comment">// Below code returns a new array with only the even numbers from the original array.</span>
+
+<span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>];
+<span class="hljs-keyword">const</span> arr2 = arr.<span class="hljs-title function_">filter</span>(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> item % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr2);
+
+<span class="hljs-comment">/*
+Output:
+[ 2, 4, 6 ]
+*/</span>
+</code></pre>
+    <h5 id="5-array-reduce">5. Array reduce()</h5>
+    <p>
+      This method executes a reducer function on each of the array elements and
+      return a single value.
+    </p>
+    <p>
+      This method adds the value of the current element to the previous element.
+      When the function runs the first time, there is no initial value of
+      previous element unless it is supplied. Otherwise the value of the first
+      array element is taken as the initial value and iteration starts from the
+      index[1] instead of index[0].
+    </p>
+    <p><code>This method works from left to right in the array.</code></p>
+    <p>The callback function takes four arguments:</p>
+    <ul>
+      <li>initial value = The initial value or previously returned value.</li>
+      <li>value - Item value.</li>
+      <li>index - Item index.</li>
+      <li>array - the array itself.</li>
+    </ul>
+    <pre><code class="language-javascript"><span class="hljs-comment">// Without Initial Value;</span>
+<span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>];
+<span class="hljs-comment">// First element is taken as the initial value - in this case 1</span>
+<span class="hljs-comment">// Iteration starts from second element by adding it&#x27;s value to 1</span>
+<span class="hljs-comment">// 1+2 = 3, 3+3 = 6, 6+4 = 10, 10+5 = 15, 15+5 = 21</span>
+
+<span class="hljs-keyword">const</span> sum1 = arr.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">total, value</span>) =&gt;</span> total + value);
+
+<span class="hljs-comment">// With Initial Value;</span>
+<span class="hljs-keyword">const</span> initialValue = <span class="hljs-number">10</span>;
+<span class="hljs-comment">// The initial value is provided  i.e 10</span>
+<span class="hljs-comment">// Iteration starts from first element by adding it&#x27;s value to 10</span>
+<span class="hljs-comment">// 10+1 = 11, 11+2 = 13, 13+3 = 16, 16+4 = 20, 20+5 = 25, 25+6 = 31</span>
+<span class="hljs-keyword">const</span> sum2 = arr.<span class="hljs-title function_">reduce</span>(
+  <span class="hljs-function">(<span class="hljs-params">total, value, initialValue</span>) =&gt;</span> total + value,
+  initialValue
+);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Sum1: &quot;</span>, sum1);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Sum2: &quot;</span>, sum2);
+
+<span class="hljs-comment">/* 
+Output:
+
+Sum1:  21
+Sum2:  31
+*/</span>
+</code></pre>
+    <h5 id="6-array-reduceright">6. Array reduceRight()</h5>
+    <p>
+      This method runs a reducer function on each array element and reduces it
+      to a single value. This method runs from right-to-left. This method does
+      not reduce the original array.
+    </p>
+    <p>
+      This method adds the value of the current element to the previous element.
+      When the function runs the first time, there is no initial value of
+      previous element unless it is supplied. Otherwise the value of the last
+      array element is taken as the initial value and iteration starts from the
+      array.length-2 instead of array.length -1.
+    </p>
+    <p><code>This method runs from right to left</code></p>
+    <p>The call back (reducer) function takes four arguments:</p>
+    <ul>
+      <li>
+        Initial Value: The provided initial value or the values of the last
+        element of the array.
+      </li>
+      <li>value - The item value.</li>
+      <li>index = The index of the item in the array.</li>
+      <li>array - The array itself.</li>
+    </ul>
+    <pre><code class="language-javascript"><span class="hljs-comment">// This code returns the sum of all the array elements.</span>
+
+<span class="hljs-comment">// Without Initial Value;</span>
+<span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>];
+<span class="hljs-comment">// First element is taken as the initial value - in this case 6</span>
+<span class="hljs-comment">// Iteration starts from second to last element  - in this case 5</span>
+<span class="hljs-comment">// 6+5 = 11, 11+4 = 15, 15+3 = 18, 18+2 = 20, 20+1 = 21</span>
+
+<span class="hljs-keyword">const</span> sum1 = arr.<span class="hljs-title function_">reduceRight</span>(<span class="hljs-function">(<span class="hljs-params">total, value</span>) =&gt;</span> total + value);
+
+<span class="hljs-comment">// With Initial Value;</span>
+<span class="hljs-keyword">const</span> initialValue = <span class="hljs-number">10</span>;
+<span class="hljs-comment">// First element is the provided initialValue i.e 10</span>
+<span class="hljs-comment">// Iteration starts from last element i.e 6</span>
+<span class="hljs-comment">// 10+6 = 16, 16+5 = 21, 21+4 = 25, 25+3 = 28, 28+2 = 30, 30+1 = 31</span>
+<span class="hljs-keyword">const</span> sum2 = arr.<span class="hljs-title function_">reduceRight</span>(
+  <span class="hljs-function">(<span class="hljs-params">total, value, initialValue</span>) =&gt;</span> total + value,
+  initialValue
+);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Sum1: &quot;</span>, sum1);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Sum2: &quot;</span>, sum2);
+</code></pre>
+    <h5 id="7-array-every">7. Array every()</h5>
+    <p>
+      This method runs a callback function test on every element of the array to
+      check if it passes the test. It returns <code>true</code> if all the
+      elements pass the test, else it returns <code>false</code>.
+    </p>
+    <p>The callback function takes three arguments:</p>
+    <ul>
+      <li>value - The value of the element.</li>
+      <li>index - The index of the element in the array.</li>
+      <li>array = The array itself.</li>
+    </ul>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">12</span>, <span class="hljs-number">33</span>, <span class="hljs-number">15</span>, <span class="hljs-number">55</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr.<span class="hljs-title function_">every</span>(<span class="hljs-function">(<span class="hljs-params">element</span>) =&gt;</span> element % <span class="hljs-number">5</span> === <span class="hljs-number">0</span>));
+
+<span class="hljs-comment">// Output: false</span>
+</code></pre>
+    <h5 id="8-array-some">8. Array some()</h5>
+    <p>
+      This method runs a callback function test on every element in the array
+      and checks if some of the elements pass the test.
+    </p>
+    <p>The callback function takes three arguments:</p>
+    <ul>
+      <li>value - The value of the element.</li>
+      <li>index - The index of the element in the array.</li>
+      <li>array - The array itself.</li>
+    </ul>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> arr = [<span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">15</span>, <span class="hljs-number">20</span>, <span class="hljs-number">25</span>, <span class="hljs-number">30</span>];
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(arr.<span class="hljs-title function_">some</span>(<span class="hljs-function">(<span class="hljs-params">element</span>) =&gt;</span> element &gt; <span class="hljs-number">20</span>));
+
+<span class="hljs-comment">// Output: true</span>
+</code></pre>
+    <h5 id="9-arrayfrom">9. Array.from()</h5>
+    <p>
+      This method returns an array from another iterable objects such as text,
+      arrays, etc..
+    </p>
+    <pre><code class="language-JavaScript"><span class="hljs-keyword">const</span> text = <span class="hljs-string">&#x27;google&#x27;</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(text))
+
+<span class="hljs-comment">// Output: [ &#x27;g&#x27;, &#x27;o&#x27;, &#x27;o&#x27;, &#x27;g&#x27;, &#x27;l&#x27;, &#x27;e&#x27; ]</span>
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], <span class="hljs-function">(<span class="hljs-params">x</span>) =&gt;</span> x + x))
+<span class="hljs-comment">// the callback function passed at the end takes each element of the array and adds it to itself and then passes it into the new array.</span>
+
+<span class="hljs-comment">// Output: [ 2, 4, 6 ]</span>
+</code></pre>
+    <h5 id="10-arraykeys">10. Array.keys()</h5>
+    <p>
+      This method returns a new iterator object that contains the keys for each
+      index of the array.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> friends = [<span class="hljs-string">&quot;Harry&quot;</span>, <span class="hljs-string">&quot;Steve&quot;</span>, <span class="hljs-string">&quot;Larry&quot;</span>, <span class="hljs-string">&quot;Matt&quot;</span>];
+<span class="hljs-keyword">const</span> iterator = friends.<span class="hljs-title function_">keys</span>();
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">of</span> iterator) {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(key);
+}
+<span class="hljs-comment">/*
+Output:
+  0
+  1
+  2
+  3
+*/</span>
+</code></pre>
+    <h5 id="11-arrayentries">11. Array.entries()</h5>
+    <p>
+      This method returns a new iterator object which contains the key-value
+      pairs for each index of the array.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> friends = [<span class="hljs-string">&quot;Harry&quot;</span>, <span class="hljs-string">&quot;Steve&quot;</span>, <span class="hljs-string">&quot;Larry&quot;</span>, <span class="hljs-string">&quot;Matt&quot;</span>];
+<span class="hljs-keyword">const</span> iterator = friends.<span class="hljs-title function_">entries</span>();
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(iterator.<span class="hljs-title function_">next</span>().<span class="hljs-property">value</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(iterator.<span class="hljs-title function_">next</span>().<span class="hljs-property">value</span>);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(iterator.<span class="hljs-title function_">next</span>().<span class="hljs-property">value</span>);
+
+<span class="hljs-comment">/*
+Output:
+
+[ 0, &#x27;Harry&#x27; ]
+[ 1, &#x27;Steve&#x27; ]
+[ 2, &#x27;Larry&#x27; ]
+*/</span>
+</code></pre>
+    <h5 id="12-arraywith">12. Array.with()</h5>
+    <p>
+      This method creates a copy of the array with modified value without
+      altering the original array.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-keyword">const</span> weekdays = [<span class="hljs-string">&quot;Sun&quot;</span>, <span class="hljs-string">&quot;Mon&quot;</span>, <span class="hljs-string">&quot;Tue&quot;</span>, <span class="hljs-string">&quot;Wed&quot;</span>, <span class="hljs-string">&quot;Thu&quot;</span>, <span class="hljs-string">&quot;Fri&quot;</span>, <span class="hljs-string">&quot;Sat&quot;</span>];
+
+<span class="hljs-keyword">const</span> newWeekdays = weekdays.<span class="hljs-title function_">with</span>(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;Monday&quot;</span>);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(newWeekdays);
+
+<span class="hljs-comment">/* 
+Output:
+
+[ &#x27;Sun&#x27;, &#x27;Monday&#x27;, &#x27;Tue&#x27;, &#x27;Wed&#x27;, &#x27;Thu&#x27;, &#x27;Fri&#x27;, &#x27;Sat&#x27; ]
+*/</span>
+</code></pre>
+    <h5 id="13-array-spread">13. Array Spread(...)</h5>
+    <p>
+      The spread method allows an array to be expanded into more objects zero or
+      more arguments(for functions) or elements (for array literals) are
+      expected.
+    </p>
+    <pre><code class="language-javascript"><span class="hljs-comment">// For Functions</span>
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">sum</span> = (<span class="hljs-params">x, y, z</span>) =&gt; x + y + z;
+
+<span class="hljs-keyword">const</span> nums = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+
+result = <span class="hljs-title function_">sum</span>(...nums);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result);
+
+<span class="hljs-comment">// Output: 6</span>
+
+<span class="hljs-comment">// For array literals</span>
+
+<span class="hljs-keyword">const</span> arr1 = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>];
+
+<span class="hljs-keyword">const</span> arr2 = [<span class="hljs-string">&quot;d&quot;</span>, <span class="hljs-string">&quot;e&quot;</span>, <span class="hljs-string">&quot;f&quot;</span>];
+
+<span class="hljs-keyword">const</span> combine = [...arr1, ...arr2];
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(combine);
+
+<span class="hljs-comment">/*
+Output:
+
+[ &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27;, &#x27;f&#x27; ]
+*/</span>
+</code></pre>
+    <p><a id="conclusion"></a></p>
+    <h2 id="conclusion">Conclusion</h2>
+    <p>
+      I hope this will help you to get to know about the different array
+      functions and would be helpful in someway in your coding journey. All the
+      best, keep coding, keep creating...
+    </p>
+  </body>
+</html>

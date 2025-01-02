@@ -1,9 +1,18 @@
 # JavaScript Array Reference Sheet
 
-In this blog, I would like to discuss the different methods that JavaScript offers for arrays. This could work as a refresher or a concise guide if you are learning the language.
-$$ $$
+In this blog, I would like to discuss the different methods that JavaScript offers for arrays. This could work as a refresher or a concise guide if you are learning the language
 
 ## Array Methods
+
+** Table of Contents **
+
+- [Basic Array Methods](#section-1)
+- [Array Search Methods](#section-2)
+- [Array Sort Methods](#section-3)
+- [Array Iteration Methods](#section-4)
+- [Conclusion](#conclusion)
+
+  <a id="section-1"></a>
 
 ### Section 1: Basic Array Methods
 
@@ -274,6 +283,8 @@ console.log(sliced_cars);
 // Output ['Lamborghini', 'Ferrari']
 ```
 
+<a id="section-2"></a>
+
 ### Section 2: Array Search Methods
 
 #### 1. Array indexOf()
@@ -389,6 +400,8 @@ console.log(numbers.findLastIndex((x) => x < 20));
 
 // Output 4
 ```
+
+<a id="section-3"></a>
 
 ### Section 3: Array Sort Methods
 
@@ -617,6 +630,8 @@ Descending:  [
 ]
 */
 ```
+
+<a id="section-4"></a>
 
 ### Section 4: Array Iteration Methods
 
@@ -938,6 +953,8 @@ Output:
 */
 ```
 
-# Conclusion
+<a id="conclusion"></a>
+
+## Conclusion
 
 I hope this will help you to get to know about the different array functions and would be helpful in someway in your coding journey. All the best, keep coding, keep creating...
