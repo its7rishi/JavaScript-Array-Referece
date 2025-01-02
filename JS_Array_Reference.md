@@ -1,5 +1,7 @@
 # JavaScript Array Reference Sheet
 
+In this blog, I would like to discuss the different methods that JavaScript offers for arrays. This could work as a refresher or a concise guide if you are learning the language.
+
 ## Array Methods
 
 ### Section 1: Basic Array Methods
@@ -934,3 +936,7 @@ Output:
 [ 'a', 'b', 'c', 'd', 'e', 'f' ]
 */
 ```
+
+# Conclusion
+
+I hope this will help you to get to know about the different array functions and would be helpful in someway in your coding journey. All the best, keep coding, keep creating...
